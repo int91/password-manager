@@ -1,0 +1,191 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://AccountCreator.gd" type="Script" id=1]
+[ext_resource path="res://lighttheme.tres" type="Theme" id=2]
+[ext_resource path="res://lightstylebox_panel.tres" type="StyleBox" id=3]
+
+[node name="AccountCreator" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 1.0
+margin_top = -1.0
+margin_right = -797.0
+margin_bottom = -416.0
+theme = ExtResource( 2 )
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 41.0
+margin_right = 311.0
+margin_bottom = 215.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="App_Edit" type="LineEdit" parent="VBoxContainer"]
+margin_right = 306.0
+margin_bottom = 24.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Email_Edit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 49.0
+margin_right = 306.0
+margin_bottom = 73.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="User_Edit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 98.0
+margin_right = 306.0
+margin_bottom = 122.0
+theme = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Pass_Edit" type="LineEdit" parent="VBoxContainer"]
+margin_top = 147.0
+margin_right = 306.0
+margin_bottom = 171.0
+theme = ExtResource( 2 )
+secret = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+margin_left = 317.0
+margin_top = 46.0
+margin_right = 474.0
+margin_bottom = 217.0
+custom_constants/separation = 25
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_App" type="RichTextLabel" parent="VBoxContainer2"]
+margin_right = 157.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Applicaton"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Email" type="RichTextLabel" parent="VBoxContainer2"]
+margin_top = 49.0
+margin_right = 157.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Email For Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_User" type="RichTextLabel" parent="VBoxContainer2"]
+margin_top = 98.0
+margin_right = 157.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Username For Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Acc" type="RichTextLabel" parent="VBoxContainer2"]
+margin_top = 147.0
+margin_right = 157.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "Password For Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Title" type="RichTextLabel" parent="."]
+margin_left = 7.0
+margin_top = 5.0
+margin_right = 475.0
+margin_bottom = 39.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+text = "
+ACCOUNT ADDER"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CheckBoxThing" type="Panel" parent="."]
+margin_left = 6.2974
+margin_top = 228.257
+margin_right = 143.297
+margin_bottom = 264.257
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CheckBoxThing"]
+margin_left = 5.0
+margin_top = 11.0
+margin_right = 106.0
+margin_bottom = 26.0
+tab_size = 6
+text = "Hide Passwords"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordCheck" type="CheckBox" parent="CheckBoxThing"]
+margin_left = 108.812
+margin_top = 6.41812
+margin_right = 132.812
+margin_bottom = 30.4181
+focus_mode = 1
+pressed = true
+enabled_focus_mode = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PasswordCheck2" type="Button" parent="."]
+margin_left = 338.856
+margin_top = 228.199
+margin_right = 475.856
+margin_bottom = 264.199
+focus_mode = 1
+custom_styles/hover = ExtResource( 3 )
+custom_styles/focus = ExtResource( 3 )
+custom_styles/normal = ExtResource( 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+custom_colors/font_color_hover = Color( 0, 0, 0, 1 )
+custom_colors/font_color_pressed = Color( 0.0470588, 0.0470588, 0.0470588, 1 )
+enabled_focus_mode = 1
+text = "Create Account"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Panel" type="Panel" parent="."]
+margin_left = 0.857376
+margin_top = 222.574
+margin_right = 481.857
+margin_bottom = 226.574
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="toggled" from="CheckBoxThing/PasswordCheck" to="." method="_on_PasswordCheck_toggled"]
+[connection signal="pressed" from="PasswordCheck2" to="." method="_on_PasswordCheck2_pressed"]

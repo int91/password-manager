@@ -80,10 +80,10 @@ __meta__ = {
 anchor_left = 0.382
 anchor_right = 0.668
 anchor_bottom = 0.316
-margin_left = -0.552032
-margin_top = 5.41872
-margin_right = -0.63208
-margin_bottom = -0.100998
+margin_left = -0.959991
+margin_top = 5.0
+margin_right = 23.96
+margin_bottom = 8.48
 
 [node name="PurchaseEmbed" type="Panel" parent="."]
 margin_left = 1.0

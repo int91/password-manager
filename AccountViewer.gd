@@ -16,8 +16,5 @@ func _ready():
 	pass 
 	
 func _process(delta):
-	AppText.text = "Application: " + account_data.application
-	EmailText.text = "Email: " + account_data.email
-	UserText.text = "Username: " + account_data.user
-	AccText.text = "Password: " + account_data.pass
+	
 	pass

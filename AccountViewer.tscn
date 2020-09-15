@@ -17,57 +17,91 @@ __meta__ = {
 }
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="."]
-margin_left = 5.0
-margin_top = 46.0
-margin_right = 381.0
-margin_bottom = 217.0
+margin_left = 155.265
+margin_top = 41.5895
+margin_right = 380.265
+margin_bottom = 212.589
 custom_constants/separation = 25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label_App" type="RichTextLabel" parent="VBoxContainer2"]
-margin_right = 376.0
+[node name="Label_App" type="LineEdit" parent="VBoxContainer2"]
+margin_right = 225.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Applicaton"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label_Email" type="RichTextLabel" parent="VBoxContainer2"]
+[node name="Label_Email" type="LineEdit" parent="VBoxContainer2"]
 margin_top = 49.0
-margin_right = 376.0
+margin_right = 225.0
 margin_bottom = 73.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Email For Account"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
-[node name="Label_User" type="RichTextLabel" parent="VBoxContainer2"]
+[node name="Label_User" type="LineEdit" parent="VBoxContainer2"]
 margin_top = 98.0
-margin_right = 376.0
+margin_right = 225.0
 margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Username For Account"
+
+[node name="Label_Acc" type="LineEdit" parent="VBoxContainer2"]
+margin_top = 147.0
+margin_right = 225.0
+margin_bottom = 171.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+margin_left = 5.0
+margin_top = 46.0
+margin_right = 152.0
+margin_bottom = 217.0
+theme = ExtResource( 2 )
+custom_constants/separation = 25
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label_Acc" type="RichTextLabel" parent="VBoxContainer2"]
+[node name="Label_App" type="Label" parent="VBoxContainer3"]
+margin_right = 147.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Applicaton"
+
+[node name="Label_Email" type="Label" parent="VBoxContainer3"]
+margin_top = 49.0
+margin_right = 147.0
+margin_bottom = 73.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Email For Account"
+
+[node name="Label_User" type="Label" parent="VBoxContainer3"]
+margin_top = 98.0
+margin_right = 147.0
+margin_bottom = 122.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Username For Account"
+
+[node name="Label_Acc" type="Label" parent="VBoxContainer3"]
 margin_top = 147.0
-margin_right = 376.0
+margin_right = 147.0
 margin_bottom = 171.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource( 2 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "Password For Account"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Label_Title" type="RichTextLabel" parent="."]
 margin_left = 7.0

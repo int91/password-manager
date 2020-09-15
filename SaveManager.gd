@@ -10,6 +10,7 @@ onready var LineEdits = {
 	"Pass": $"../AccountCreator/VBoxContainer/Pass_Edit"
 }
 onready var creator = $"../AccountCreator"
+onready var viewer = $"../AccountViewer"
 onready var WallList = $"../Selectors/ItemList"
 onready var AccList = $"../Selectors/ItemList2"
 onready var AppList = $"../Selectors/ItemList3"
@@ -154,7 +155,9 @@ func load_settings():
 	if result_json.error == OK:
 		var data = result_json.result
 		creator.Settings = data
-		Background.texture = set_background(creator.Settings.Wallpaper[0])
+		if data.Wallpaper != []:
+			Background.texture = set_background(int(data.Wallpaper[0]))
+			pass
 	else:
 		print("Error: ", result_json.error)
 		print("Error Line: ", result_json.error_line)
@@ -175,6 +178,10 @@ func _on_ItemList3_item_selected(index):
 func _on_ItemList2_item_selected(index):
 	if SelectedCategory != null:
 		load_account(index)
+		viewer.AppText.text = viewer.account_data.application
+		viewer.EmailText.text = viewer.account_data.email
+		viewer.UserText.text = viewer.account_data.user
+		viewer.AccText.text = viewer.account_data.pass
 	pass
 
 

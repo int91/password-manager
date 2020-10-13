@@ -31,16 +31,7 @@ func _ready():
 	pass
 
 func check_tier():
-	match Tier:
-		ProductTiers.free:
-			$"../Background".hide()
-			$"../Selectors/ItemList".hide()
-		ProductTiers.basic:
-			$"../PurchaseEmbed".hide()
-			pass
-		ProductTiers.premium:
-			$"../PurchaseEmbed".hide()
-			pass
+	$"../PurchaseEmbed".hide()
 	pass
 
 func _process(delta):

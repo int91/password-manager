@@ -86,6 +86,7 @@ margin_right = 23.96
 margin_bottom = 8.48
 
 [node name="PurchaseEmbed" type="Panel" parent="."]
+visible = false
 margin_left = 1.0
 margin_top = 644.0
 margin_right = 242.0
@@ -112,6 +113,8 @@ __meta__ = {
 }
 
 [node name="Purchase" type="Button" parent="PurchaseEmbed"]
+anchor_left = 0.00594181
+anchor_right = 0.00594181
 margin_left = -2.0
 margin_top = -1.0
 margin_right = 241.0
@@ -125,10 +128,8 @@ __meta__ = {
 }
 
 [node name="AccountCreator" parent="." instance=ExtResource( 2 )]
-margin_left = 1.28659
-margin_top = 5.15577
-margin_right = -796.713
-margin_bottom = -409.844
+margin_top = 5.0
+margin_bottom = -446.0
 [connection signal="item_selected" from="Selectors/ItemList2" to="SaveManager" method="_on_ItemList2_item_selected"]
 [connection signal="item_selected" from="Selectors/ItemList3" to="SaveManager" method="_on_ItemList3_item_selected"]
 [connection signal="item_selected" from="Selectors/ItemList" to="SaveManager" method="_on_ItemList_item_selected"]

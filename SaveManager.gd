@@ -9,8 +9,8 @@ onready var LineEdits = {
 	"User": $"../AccountCreator/VBoxContainer/User_Edit",
 	"Pass": $"../AccountCreator/VBoxContainer/Pass_Edit"
 }
-onready var creator = $"../AccountCreator"
-onready var viewer = $"../AccountViewer"
+onready var Creator = $"../AccountCreator"
+onready var Viewer = $"../AccountViewer"
 onready var WallList = $"../Selectors/ItemList"
 onready var AccList = $"../Selectors/ItemList2"
 onready var AppList = $"../Selectors/ItemList3"
@@ -36,9 +36,9 @@ func list_accounts():
 	pass
 
 func make_wallpaper():
-	var save_directory = Directory.new()
-	save_directory.open("user://")
-	save_directory.make_dir("Wallpapers")
+	var saveDirectory = Directory.new()
+	saveDirectory.open("user://")
+	saveDirectory.make_dir("Wallpapers")
 
 func set_background(index):
 	var tex = ImageTexture.new()
@@ -95,7 +95,7 @@ func list_files_in_directory(path):
 	return files
 
 func save_account(app, email, user, passw):
-	save_settings(creator.Settings)
+	save_settings(Creator.Settings)
 	list_wallpapers()
 	print("Making")
 	var account_data = {
@@ -105,56 +105,56 @@ func save_account(app, email, user, passw):
 		"pass":passw
 	}
 	if (account_data.application != "" && account_data.email != "" && account_data.user != "" && account_data.pass != ""):
-		var save_directory = Directory.new()
-		var save_file = File.new()
-		save_directory.open("user://")
-		save_directory.make_dir(account_data.application)
-		save_file.open("user://"+account_data.application+"/" + account_data.user + ".acc", File.WRITE)
-		save_file.store_line(to_json(account_data))
-		save_file.close()
-		creator.LineEdits.Application.clear()
-		creator.LineEdits.Email.clear()
-		creator.LineEdits.User.clear()
-		creator.LineEdits.Pass.clear()
+		var saveDirectory = Directory.new()
+		var saveFile = File.new()
+		saveDirectory.open("user://")
+		saveDirectory.make_dir(account_data.application)
+		saveFile.open("user://"+account_data.application+"/" + account_data.user + ".acc", File.WRITE)
+		saveFile.store_line(to_json(account_data))
+		saveFile.close()
+		Creator.LineEdits.Application.clear()
+		Creator.LineEdits.Email.clear()
+		Creator.LineEdits.User.clear()
+		Creator.LineEdits.Pass.clear()
 	else:
 		print("Fill out all boxes pls")
 	list_accounts()
 	pass
 
 func save_settings(settings):
-	var data = settings
-	var save_directory = Directory.new()
-	var save_file = File.new()
-	save_directory.open("user://")
-	save_file.open("user://settings.cfg", File.WRITE)
-	save_file.store_line(to_json(data))
-	save_file.close()
+	var Data = settings
+	var saveDirectory = Directory.new()
+	var saveFile = File.new()
+	saveDirectory.open("user://")
+	saveFile.open("user://settings.cfg", File.WRITE)
+	saveFile.store_line(to_json(Data))
+	saveFile.close()
 	pass
 
 func load_account(User):
-	var viewer = $"../AccountViewer"
-	var save_file = File.new()
-	save_file.open("user://" + SelectedCategory + "/" + AccFiles[User], File.READ)
-	var result_json = JSON.parse(save_file.get_as_text())
+	var Viewer = $"../AccountViewer"
+	var saveFile = File.new()
+	saveFile.open("user://" + SelectedCategory + "/" + AccFiles[User], File.READ)
+	var result_json = JSON.parse(saveFile.get_as_text())
 	var result = {}
 	if result_json.error == OK:
 		var data = result_json.result
-		viewer.account_data = data
+		Viewer.account_data = data
 	else:
 		print("Error: ", result_json.error)
 		print("Error Line: ", result_json.error_line)
 		print("Error String: ", result_json.error_string)
-	save_file.close()
+	saveFile.close()
 
 func load_settings():
-	creator = $"../AccountCreator"
-	var save_file = File.new()
-	save_file.open("user://settings.cfg", File.READ)
-	var result_json = JSON.parse(save_file.get_as_text())
+	Creator = $"../AccountCreator"
+	var saveFile = File.new()
+	saveFile.open("user://settings.cfg", File.READ)
+	var result_json = JSON.parse(saveFile.get_as_text())
 	var result = {}
 	if result_json.error == OK:
 		var data = result_json.result
-		creator.Settings = data
+		Creator.Settings = data
 		if data.Wallpaper != []:
 			Background.texture = set_background(int(data.Wallpaper[0]))
 			pass
@@ -162,7 +162,7 @@ func load_settings():
 		print("Error: ", result_json.error)
 		print("Error Line: ", result_json.error_line)
 		print("Error String: ", result_json.error_string)
-	save_file.close()
+	saveFile.close()
 
 func _on_ItemList_item_selected(index):
 	Background.texture = set_background(index)
@@ -178,10 +178,10 @@ func _on_ItemList3_item_selected(index):
 func _on_ItemList2_item_selected(index):
 	if SelectedCategory != null:
 		load_account(index)
-		viewer.AppText.text = viewer.account_data.application
-		viewer.EmailText.text = viewer.account_data.email
-		viewer.UserText.text = viewer.account_data.user
-		viewer.AccText.text = viewer.account_data.pass
+		Viewer.AppText.text = Viewer.account_data.application
+		Viewer.EmailText.text = Viewer.account_data.email
+		Viewer.UserText.text = Viewer.account_data.user
+		Viewer.AccText.text = Viewer.account_data.pass
 	pass
 
 

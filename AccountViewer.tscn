@@ -31,6 +31,7 @@ margin_right = 225.0
 margin_bottom = 24.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+editable = false
 
 [node name="Label_Email" type="LineEdit" parent="VBoxContainer2"]
 margin_top = 49.0
@@ -38,6 +39,7 @@ margin_right = 225.0
 margin_bottom = 73.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+editable = false
 
 [node name="Label_User" type="LineEdit" parent="VBoxContainer2"]
 margin_top = 98.0
@@ -45,6 +47,7 @@ margin_right = 225.0
 margin_bottom = 122.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+editable = false
 
 [node name="Label_Acc" type="LineEdit" parent="VBoxContainer2"]
 margin_top = 147.0
@@ -52,6 +55,7 @@ margin_right = 225.0
 margin_bottom = 171.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
+editable = false
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="."]
 margin_left = 5.0

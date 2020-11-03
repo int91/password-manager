@@ -77,6 +77,7 @@ __meta__ = {
 }
 
 [node name="AccountViewer" parent="." instance=ExtResource( 5 )]
+visible = false
 anchor_left = 0.382
 anchor_right = 0.668
 anchor_bottom = 0.316

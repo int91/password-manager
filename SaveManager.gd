@@ -170,6 +170,7 @@ func _on_ItemList_item_selected(index):
 
 
 func _on_ItemList3_item_selected(index):
+	$"../AccountViewer".hide()
 	AccFiles = list_files_folder("user://"+Directories[index])
 	SelectedCategory = Directories[index]
 	pass
@@ -177,6 +178,7 @@ func _on_ItemList3_item_selected(index):
 
 func _on_ItemList2_item_selected(index):
 	if SelectedCategory != null:
+		$"../AccountViewer".show()
 		load_account(index)
 		Viewer.AppText.text = Viewer.account_data.application
 		Viewer.EmailText.text = Viewer.account_data.email

@@ -8,7 +8,8 @@ onready var LineEdits = {
 	"Application": $VBoxContainer/App_Edit,
 	"Email": $VBoxContainer/Email_Edit,
 	"User": $VBoxContainer/User_Edit,
-	"Pass": $VBoxContainer/Pass_Edit
+	"Pass": $VBoxContainer/Pass_Edit,
+	"Desc": $VBoxContainer/Desc_Edit
 }
 
 var KeyBinds = {
@@ -50,7 +51,7 @@ func _process(delta):
 		pass
 	if Input.is_action_just_pressed(KeyBinds.enter):
 		savemanager.clearboxes()
-		savemanager.save_account(LineEdits.Application.text, LineEdits.Email.text, LineEdits.User.text, LineEdits.Pass.text)
+		savemanager.save_account(LineEdits.Application.text, LineEdits.Email.text, LineEdits.User.text, LineEdits.Pass.text, LineEdits.Desc.text)
 		pass
 	pass
 
@@ -76,5 +77,5 @@ func _on_Purchase_pressed():
 func _on_PasswordCheck2_pressed():
 	#print("yes")
 	savemanager.clearboxes()
-	savemanager.save_account(LineEdits.Application.text, LineEdits.Email.text, LineEdits.User.text, LineEdits.Pass.text)
+	savemanager.save_account(LineEdits.Application.text, LineEdits.Email.text, LineEdits.User.text, LineEdits.Pass.text, LineEdits.Desc.text)
 	pass # Replace with function body.

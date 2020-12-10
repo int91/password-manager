@@ -94,30 +94,54 @@ func list_files_in_directory(path):
 	dir.list_dir_end()
 	return files
 
-func save_account(app, email, user, passw):
+func save_account(app, email, user, passw, desc):
 	save_settings(Creator.Settings)
 	list_wallpapers()
 	print("Making")
-	var account_data = {
+	if (desc != null and ""):
+		var account_data = {
 		"application":app,
 		"email":email,
 		"user":user,
 		"pass":passw
-	}
-	if (account_data.application != "" && account_data.email != "" && account_data.user != "" && account_data.pass != ""):
-		var saveDirectory = Directory.new()
-		var saveFile = File.new()
-		saveDirectory.open("user://")
-		saveDirectory.make_dir(account_data.application)
-		saveFile.open("user://"+account_data.application+"/" + account_data.user + ".acc", File.WRITE)
-		saveFile.store_line(to_json(account_data))
-		saveFile.close()
-		Creator.LineEdits.Application.clear()
-		Creator.LineEdits.Email.clear()
-		Creator.LineEdits.User.clear()
-		Creator.LineEdits.Pass.clear()
+		}
+		if (account_data.application != "" && account_data.email != "" && account_data.user != "" && account_data.pass != ""):
+			var saveDirectory = Directory.new()
+			var saveFile = File.new()
+			saveDirectory.open("user://")
+			saveDirectory.make_dir(account_data.application)
+			saveFile.open("user://"+account_data.application+"/" + account_data.user + ".acc", File.WRITE)
+			saveFile.store_line(to_json(account_data))
+			saveFile.close()
+			Creator.LineEdits.Application.clear()
+			Creator.LineEdits.Email.clear()
+			Creator.LineEdits.User.clear()
+			Creator.LineEdits.Pass.clear()
+		else:
+			print("Fill out all boxes pls")
 	else:
-		print("Fill out all boxes pls")
+		var account_data = {
+		"application":app,
+		"email":email,
+		"user":user,
+		"pass":passw,
+		"desc":desc
+		}
+		if (account_data.application != "" && account_data.email != "" && account_data.user != "" && account_data.pass != ""):
+			var saveDirectory = Directory.new()
+			var saveFile = File.new()
+			saveDirectory.open("user://")
+			saveDirectory.make_dir(account_data.application)
+			saveFile.open("user://"+account_data.application+"/" + account_data.user + ".acc", File.WRITE)
+			saveFile.store_line(to_json(account_data))
+			saveFile.close()
+			Creator.LineEdits.Application.clear()
+			Creator.LineEdits.Email.clear()
+			Creator.LineEdits.User.clear()
+			Creator.LineEdits.Pass.clear()
+			Creator.LineEdits.Desc.clear()
+		else:
+			print("Fill out all boxes pls")
 	list_accounts()
 	pass
 
@@ -184,6 +208,10 @@ func _on_ItemList2_item_selected(index):
 		Viewer.EmailText.text = Viewer.account_data.email
 		Viewer.UserText.text = Viewer.account_data.user
 		Viewer.AccText.text = Viewer.account_data.pass
+		if Viewer.account_data.has("desc"):
+			Viewer.DescText.text = Viewer.account_data.desc
+		else:
+			pass
 	pass
 
 

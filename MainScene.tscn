@@ -129,8 +129,10 @@ __meta__ = {
 }
 
 [node name="AccountCreator" parent="." instance=ExtResource( 2 )]
-margin_top = 5.0
-margin_bottom = -446.0
+margin_left = 0.0
+margin_top = 4.0
+margin_right = -798.0
+margin_bottom = -404.0
 [connection signal="item_selected" from="Selectors/ItemList2" to="SaveManager" method="_on_ItemList2_item_selected"]
 [connection signal="item_selected" from="Selectors/ItemList3" to="SaveManager" method="_on_ItemList3_item_selected"]
 [connection signal="item_selected" from="Selectors/ItemList" to="SaveManager" method="_on_ItemList_item_selected"]

@@ -84,7 +84,7 @@ margin_right = 157.0
 margin_bottom = 23.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Applicaton"
+text = "Applicaton*"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -92,21 +92,21 @@ __meta__ = {
 [node name="Label_Email" type="RichTextLabel" parent="VBoxContainer2"]
 margin_top = 48.0
 margin_right = 157.0
-margin_bottom = 72.0
+margin_bottom = 71.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Email For Account"
+text = "Email For Account*"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_User" type="RichTextLabel" parent="VBoxContainer2"]
-margin_top = 97.0
+margin_top = 96.0
 margin_right = 157.0
 margin_bottom = 120.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Username For Account"
+text = "Username For Account*"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -114,18 +114,18 @@ __meta__ = {
 [node name="Label_Acc" type="RichTextLabel" parent="VBoxContainer2"]
 margin_top = 145.0
 margin_right = 157.0
-margin_bottom = 169.0
+margin_bottom = 168.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
-text = "Password For Account"
+text = "Password For Account*"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Label_Desc" type="RichTextLabel" parent="VBoxContainer2"]
-margin_top = 194.0
+margin_top = 193.0
 margin_right = 157.0
-margin_bottom = 218.0
+margin_bottom = 217.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 text = "Description / Details"

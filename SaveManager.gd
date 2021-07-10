@@ -211,6 +211,7 @@ func _on_ItemList2_item_selected(index):
 		if Viewer.account_data.has("desc"):
 			Viewer.DescText.text = Viewer.account_data.desc
 		else:
+			Viewer.DescText.text = ""
 			pass
 	pass
 
